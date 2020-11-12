@@ -1,0 +1,10 @@
+%% ROM
+data = xlsread('2017 Womens DVJ_H Time Series.xlsx', 'R_Ankle_Angle_DVJ_H')
+
+[rows, columns] = size(data);
+for col = 1 : 2 : columns
+    x = data(2:101, col);
+    y = data(2:101, col + 1);
+    plot(x, y, '-', 'LineWidth', 2);
+    hold on;
+end
